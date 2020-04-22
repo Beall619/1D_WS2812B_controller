@@ -1,0 +1,148 @@
+body
+{
+    margin: 4px;
+}
+
+#navigation_header
+{
+    width: 100%;
+    height: 8%;
+    position: absolute;
+    top: 0;
+    background-color: rgb(65, 64, 64);
+}
+
+.navigation_link
+{
+    text-decoration: none;
+    position: relative;
+    height: 100%;
+    width: 30%;
+    text-align: center;
+    float: left;
+    background-color: rgb(202, 99, 15);
+}
+
+.navigation_link:hover
+{
+    background-color: rgb(255, 124, 16);
+}
+
+.navigation_link_text
+{
+    color: white;
+    margin: 0;
+    font-size: 6vh;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+#stats_div
+{
+    background-color: rgb(65, 64, 64);
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    top:8.5%;
+}
+
+#control_div
+{
+    background-color: rgb(65, 64, 64);
+    width: 100%;
+    height: 10%;
+    position: absolute;
+    top:39%;
+}
+
+#sets_div
+{
+    position: absolute;
+    background-color: rgb(65, 64, 64);
+    top: 49.5%;
+    width: 100%;
+    height: 50%;
+}
+.power_div
+{
+    background-color: white;
+    height: 50%;
+    width: 30%;
+    top: 10%;
+    left: 5%;
+    position: absolute;
+    border: 1vh solid orange;
+}
+
+.power_div#off:hover
+{
+    border-color: orange;
+}
+.power_div#on:hover
+{
+    border-color: orange;
+}
+
+.power_div#off
+{
+    background-color: rgb(100, 0, 0);
+    border-color: white;
+}
+
+.power_div#on
+{
+    background-color: rgb(0, 100, 0);
+    border-color: white;
+}
+
+#brightness_slider
+{
+    position: absolute;
+    top: 17%;
+    left: 43%;
+    width: 50%;
+    background-color: darkgray;
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    color: black;
+}
+
+#brightness_slider:hover
+{
+    cursor: pointer;
+    background-color: rgb(85, 85, 85);
+}
+
+#brightness_label
+{
+    position: absolute;
+    top: 17%;
+    left: 59%;
+    color: rgb(219, 219, 219);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+#power_label
+{
+    color: rgb(219, 219, 219);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin: 0;
+    text-align: center;
+    line-height: 5vh;
+}
+
+/* Smartphones (portrait) ----------- */
+@media only screen and (max-width: 600px)
+{
+    .navigation_link_text
+    {
+        position: absolute;
+        left: 12.5%;
+        top: 12.5%;
+        font-size: 4vh;
+    }
+    #brightness_label
+    {
+        left: 43%;
+    }
+}

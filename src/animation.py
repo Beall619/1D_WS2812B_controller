@@ -8,8 +8,8 @@ sys.path.append("data/animations")
 programmed_animations = __import__("programmed_animations")
 
 class animation:
-    def __init__(self, safe_control_queue, animation_instructions):
-        self.safe_control_queue = safe_control_queue
+    def __init__(self, safe_control, animation_instructions):
+        self.safe_control = safe_control
         self.animation_instructions = animation_instructions
 
         self.thread = Thread()
@@ -70,14 +70,14 @@ class animation:
             if(frame > len(animation_frames)-1):
                 frame = 0
                 repeated_times += 1
-            if(animation_frames[frame][0] == "sleep"):
+            if(animation_frames[frame] == "sleep"):
                 sleep(animation_frames[frame][1])
                 frame+=1
                 continue
             for led in animation_frames[frame]:
-                self.safe_control_queue.put(led)
+                self.safe_control.buffer.append(led)
             frame+=1
-            self.safe_control_queue.put("p")
+            self.safe_control.play_buffer()
         self.is_done = True
 
     def load_mapped_animation(self, animation_name):
@@ -85,7 +85,7 @@ class animation:
             return json.load(file)
     
     def load_programmed_animation(self, animation_name):
-        return getattr(programmed_animations, animation_name)(self.safe_control_queue)
+        return getattr(programmed_animations, animation_name)(self.safe_control)
 
     def get_type(self, animation_name):
         with open("data/types.json") as file:

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/main.css">
+        <title>Led Control</title>
+    </head>
+    <body>
+        <header id="navigation_header">
+            <a class="navigation_link" href="/">
+                <h2 class="navigation_link_text">Home</h2>
+            </a>
+            <a class="navigation_link" href="/creator">
+                <h2 class="navigation_link_text">Creator</h2>
+            </a>
+        </header>
+        <div id="stats_div">
+
+        </div>
+        <div id="control_div">
+            <div class="power_div", onmouseup=handle_power()>
+                <h1 id="power_label">Power: NULL</h1>
+            </div>
+            <input id="brightness_slider"  step=.001 value=".4" type="range" min=".001" max="1" onchange=handle_brightness()>
+            <h1 id="brightness_label">Brightness: NULL</h1> 
+        </div>
+        <div id="sets_div">
+            
+        </div>
+    </body>
+    <script src="javascript/main.js"></script>
+</html>
